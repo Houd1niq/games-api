@@ -10,9 +10,9 @@ const port = process.env.PORT;
 
 app.get("/games", async (req: Request, res: Response) => {
   const queryString = restoreQueryString(req.query);
-  let address = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+  let address = "https://www.freetogame.com/api/games";
   if (req.query.tag) {
-    address = "https://free-to-play-games-database.p.rapidapi.com/api/filter";
+    address = "https://www.freetogame.com/api/filter";
   }
   console.log(queryString, "queryString", address);
   const response = await axios(address + queryString, {
@@ -27,7 +27,7 @@ app.get("/games", async (req: Request, res: Response) => {
 
 app.get("/game/:id", async (req: Request, res: Response) => {
   const id = req.params.id;
-  const response = await axios(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`, {
+  const response = await axios(` https://www.freetogame.com/api/game?id=${id}`, {
     headers: {
       "X-RapidAPI-Key": process.env.API_KEY,
     },
