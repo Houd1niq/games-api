@@ -22,6 +22,9 @@ app.get("/games", async (req: Request, res: Response) => {
   });
   console.log(response)
   res.send(response.data);
+})
+app.get("/", async (req: Request, res: Response) => {
+  res.send("hello world")
 });
 
 
@@ -38,3 +41,5 @@ app.get("/game/:id", async (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
+
+export {app}
