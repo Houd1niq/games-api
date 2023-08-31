@@ -1,6 +1,6 @@
 # games-api
 Бэкенд для avito-games, инкапсулирующий запросы к free-games-api
-games-api-v1.vercel.app
+[Ссылка на vercel](https://games-api-v1.vercel.app)
 
 ## Установка
 
