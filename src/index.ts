@@ -1,12 +1,19 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import axios from "axios";
+import cors from "cors"
 import { restoreQueryString } from './helpers/restoreQueryString';
 
 dotenv.config();
 
 const app: Express = express();
+
 const port = process.env.PORT;
+app.use(cors({
+  origin: (requestOrigin, callback) => {
+    return callback(null, true);
+  }
+}))
 
 app.get("/games", async (req: Request, res: Response) => {
   const queryString = restoreQueryString(req.query);
